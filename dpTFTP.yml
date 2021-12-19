@@ -1,0 +1,8 @@
+---
+# tasks file for Docker
+- name: Install Docker
+  hosts: localhost
+  gather_facts: true
+
+  roles:
+   - tftp

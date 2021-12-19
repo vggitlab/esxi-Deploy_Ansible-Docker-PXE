@@ -1,0 +1,32 @@
+---
+
+   - name: Apply Template for default boot menu file
+     ansible.builtin.template:
+       src: templates/default.j2
+       dest: "./{{role_name}}/files/tftpboot/pxelinux.cfg/default"
+
+   - name: BIOS - Create Host specific boot configurations
+     block:
+       - name: Make a copy of default template file
+         ansible.builtin.copy:
+           src: "./{{role_name}}/templates/default.j2"
+           dest: "./{{role_name}}/templates/{{ item.MAC_ADDRESS }}.j2"
+           owner: "{{ USER }}"
+           group: "{{ GROUP }}"
+         with_items:
+           "{{ ESXi_HOSTS }}"
+
+       - name: Modify host specific Template file
+         ansible.builtin.lineinfile:
+           path: "./{{role_name}}/templates/{{ item.MAC_ADDRESS }}.j2"
+           regexp: '^APPEND'
+           line: APPEND -c /{{ OSDIRNAME }}/boot.cfg ks=http://{{ WEBSERVER_IP }}/{{ item.MAC_ADDRESS }}.cfg
+         with_items:
+           "{{ ESXi_HOSTS }}"
+
+       - name: Apply Template for host specific boot file
+         ansible.builtin.template:
+           src: "templates/{{ item.MAC_ADDRESS }}.j2"
+           dest: "./{{role_name}}/files/tftpboot/pxelinux.cfg/01-{{ item.MAC_ADDRESS }}"
+         with_items:
+           "{{ ESXi_HOSTS }}"

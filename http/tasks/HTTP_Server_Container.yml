@@ -1,0 +1,23 @@
+---
+
+   - name: Create HTTP server Docker image from Dockerfile
+     community.docker.docker_image:
+       name: "{{ http_docker_image_name }}"
+       build:
+         pull: yes
+         path: "{{role_name}}/files/"
+       state: present
+       source: build
+
+   - name: Deploy Docker container from Docker image
+     community.docker.docker_container:
+        name: "{{ http_docker_container_name }}"
+        image: "{{ http_docker_image_name }}"
+        state: started
+        restart_policy: always
+        networks:
+          - name: "MACVLAN"
+            ipv4_address: "{{ http_docker_container_ip }}"
+        volumes:
+          - "./{{role_name}}/files/KS/:/var/www/html"
+

@@ -1,0 +1,24 @@
+---
+
+#ESXi_HOSTS:
+#  - ESXi_HOST: "ESXi-01"
+#    NAME: "ESXi01"
+#    IP_ADDRESS: "192.168.255.221"
+#    MAC_ADDRESS: "00-0c-29-64-e4-1e"
+#  - ESXi_HOST: "ESXi-02"
+#    NAME: "ESXi02"
+#    IP_ADDRESS: "192.168.255.222"
+#    MAC_ADDRESS: "00-0c-29-66-92-f3"
+
+#tftp_docker_image_name: "tftp-server"
+#tftp_docker_container_name: "tftp-server"
+#tftp_docker_container_ip: "192.168.255.16"
+
+#USER: "ansible"
+#GROUP: "ansible"
+
+#OSDIRNAME: "ESXi-7.0"
+
+#WEBSERVER_IP: "192.168.255.17"
+
+#SYSLINUX_URL: "https://mirrors.edge.kernel.org/pub/linux/utils/boot/syslinux/3.xx/syslinux-3.86.zip"

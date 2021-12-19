@@ -1,0 +1,15 @@
+---
+# vars file for Docker
+DOCKER_COMPOSE_VERSION: "1.29.1"
+DOCKER_REQ_PACKAGES:
+  - apt-transport-https
+  - ca-certificates
+  - curl
+  - gnupg
+  - lsb-release
+DOCKER_PACKAGES:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+USER: "ansible"
+CTOP_VERSION: "0.7.3"

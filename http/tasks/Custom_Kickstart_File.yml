@@ -1,0 +1,19 @@
+---
+
+   - name: Create Host specific boot configurations
+     block:
+       - name: Make a copy of default template file
+         ansible.builtin.copy:
+           src: "./{{role_name}}/templates/ks.j2"
+           dest: "./{{role_name}}/templates/{{ item.MAC_ADDRESS }}.j2"
+           owner: "{{ USER }}"
+           group: "{{ GROUP }}"
+         with_items:
+           "{{ ESXi_HOSTS }}"
+
+       - name: Apply Template for specific configuration file
+         ansible.builtin.template:
+           src: "templates/{{ item.MAC_ADDRESS }}.j2"
+           dest: "./{{role_name}}/files/KS/{{ item.MAC_ADDRESS }}.cfg"
+         with_items:
+           "{{ ESXi_HOSTS }}"

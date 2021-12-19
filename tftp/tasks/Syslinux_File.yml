@@ -1,0 +1,21 @@
+---
+
+   - name: Extract syslinux archive
+     ansible.builtin.unarchive:
+#       src: "{{ SYSLINUX_URL }}"
+       src: "./{{role_name}}/files/syslinux/syslinux-3.86.zip"
+       dest: "./{{role_name}}/files/syslinux"
+       owner: "{{ USER }}"
+       group: "{{ GROUP }}"
+       remote_src: yes
+       validate_certs: no
+
+   - name: Copy Syslinux files to tftpboot directory
+     ansible.builtin.copy:
+       src: "{{ item }}"
+       dest: "./{{role_name}}/files/tftpboot"
+       owner: "{{ USER }}"
+       group: "{{ GROUP }}"
+     loop:
+       - "./{{role_name}}/files/syslinux/core/pxelinux.0"
+       - "./{{role_name}}/files/syslinux/com32/menu/menu.c32"

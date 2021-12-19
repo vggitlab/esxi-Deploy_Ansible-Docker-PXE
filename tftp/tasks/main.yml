@@ -1,0 +1,8 @@
+---
+
+   - include: ISO_File.yml
+   - include: Syslinux_File.yml
+   - include: BOOT_CFG_File.yml
+   - include: BIOS_BOOT.yml
+   - include: UEFI_BOOT.yml
+   - include: TFTP_Server_Container.yml

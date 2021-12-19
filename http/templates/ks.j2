@@ -1,0 +1,36 @@
+##############################
+# Custom ESXi kickstart file #
+##############################
+
+accepteula
+
+install --firstdisk --overwritevmfs
+
+#Set password, either encrypted or unencrypted
+#rootpw --iscrypted <your encrypted password>
+rootpw Password123!
+
+network --bootproto=static --device=vmnic0 --ip={{ item.IP_ADDRESS }} --netmask={{ NETMASK }} --gateway={{ GATEWAY }} --nameserver={{ DNSSERVER_IP }} --hostname={{ item.NAME }}.{{ DOMAIN_NAME }} --addvmportgroup=0
+#network --bootproto=dhcp
+
+reboot
+
+%firstboot --interpreter=busybox
+
+###  Disable IPv6 support (reboot is required)
+esxcli network ip set --ipv6-enabled=false
+
+#sleep 20
+#esxcli network vswitch standard uplink add --uplink-name vmnic1 --vswitch-name vSwitch0
+#esxcli network ip dns search add --domain={{ DOMAIN_NAME }}
+#esxcli network ip dns server add --server={{ DNSSERVER_IP }}
+#esxcli system maintenanceMode set -e true
+
+# Suppress shell warning
+esxcli system settings advanced set -o /UserVars/SuppressShellWarning -i 1
+
+# Enable & start remote ESXi Shell  (SSH)
+vim-cmd hostsvc/enable_ssh
+vim-cmd hostsvc/start_ssh
+
+reboot

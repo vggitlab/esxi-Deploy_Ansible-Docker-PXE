@@ -1,0 +1,17 @@
+---
+
+   - name: Remove all "/" in boot.cfg files
+     ansible.builtin.command: "{{ item }}"
+     loop:
+       - sed -i 's/\///g' "./{{role_name}}/files/tftpboot/{{ OSDIRNAME }}/boot.cfg"
+       - sed -i 's/\///g' "./{{role_name}}/files/tftpboot/{{ OSDIRNAME }}/efi/boot/boot.cfg"
+
+   - name: Add location to "prefix=" line in boot.cfg files
+     ansible.builtin.lineinfile:
+       path: "{{ item }}"
+       regexp: '^prefix='
+       line: prefix=/{{ OSDIRNAME }}/
+     loop:
+       - "./{{role_name}}/files/tftpboot/{{ OSDIRNAME }}/boot.cfg"
+       - "./{{role_name}}/files/tftpboot/{{ OSDIRNAME }}/efi/boot/boot.cfg"
+

@@ -1,0 +1,23 @@
+---
+
+   - name: Create TFTP server Docker image from Dockerfile
+     community.docker.docker_image:
+       name: "{{ tftp_docker_image_name }}"
+       build:
+         pull: yes
+         path: "{{role_name}}/files/"
+       state: present
+       source: build
+
+   - name: Deploy Docker container from Docker image
+     community.docker.docker_container:
+        name: "{{ tftp_docker_container_name }}"
+        image: "{{ tftp_docker_image_name }}"
+        state: started
+        restart_policy: always
+        networks:
+          - name: "MACVLAN"
+            ipv4_address: "{{ tftp_docker_container_ip }}"
+        volumes:
+          - "./{{role_name}}/files/tftpd.conf:/etc/default/tftpd-hpa"
+          - "./{{role_name}}/files/tftpboot/:/var/lib/tftpboot:ro"

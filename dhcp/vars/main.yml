@@ -1,0 +1,20 @@
+---
+
+#dhcp_docker_image_name: "dhcp-server"
+#dhcp_docker_container_name: "dhcp-server"
+#dhcp_docker_container_ip: "192.168.255.15"
+
+#SUBNET: "192.168.255.0"
+#NETMASK: "255.255.255.0"
+#GATEWAY: "192.168.255.2"
+#BRODCAST: "192.168.255.255"
+#START_IP_RANGE: "192.168.255.31"
+#END_IP_RANGE: "192.168.255.240"
+#DOMAIN_NAME: "vgit.local"
+#DNSSERVER_IP: "8.8.8.8"
+
+#NEXTSERVER_IP: "192.168.255.16"
+
+#WEBSERVER_IP: "192.168.255.17"
+
+#OSDIRNAME: "ESXi-7.0"

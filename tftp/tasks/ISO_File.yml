@@ -1,0 +1,26 @@
+---
+
+   - name: Create directory for isntallation files
+     file:
+       path: "./{{role_name}}/files/tftpboot/{{ OSDIRNAME }}"
+       owner: "{{ USER }}"
+       group: "{{ GROUP }}"
+       mode: 0775
+       state: directory
+
+   - name: Mount ISO file to temporary path
+     mount:
+       path: /media/cdrom
+       src: /dev/sr0
+       fstype: iso9660
+       state: mounted
+
+   - name: Copy files from temporary path to tftpboot directory
+     ansible.builtin.copy:
+       src: /media/cdrom/
+       dest: "./{{role_name}}/files/tftpboot/{{ OSDIRNAME }}"
+
+   - name: Unmount ISO file
+     mount:
+       path: /media/cdrom
+       state: unmounted
