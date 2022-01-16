@@ -1,5 +1,13 @@
 ---
 
+   - name: Create directory for isntallation files
+     file:
+       path: "./{{role_name}}/files/tftpboot/pxelinux.cfg"
+       owner: "{{ USER }}"
+       group: "{{ GROUP }}"
+       mode: 0775
+       state: directory
+
    - name: Apply Template for default boot menu file
      ansible.builtin.template:
        src: templates/default.j2
