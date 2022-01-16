@@ -1,6 +1,6 @@
 ---
 
-   - name: Create directory for isntallation files
+   - name: Create "pxelinux.cfg" directory
      file:
        path: "./{{role_name}}/files/tftpboot/pxelinux.cfg"
        owner: "{{ USER }}"
