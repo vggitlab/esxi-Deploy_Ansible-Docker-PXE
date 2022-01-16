@@ -1,5 +1,13 @@
 ---
 
+   - name: Create "KS" directory
+     file:
+       path: "./{{role_name}}/files/KS"
+       owner: "{{ USER }}"
+       group: "{{ GROUP }}"
+       mode: 0775
+       state: directory
+
    - name: Create Host specific boot configurations
      block:
        - name: Make a copy of default template file
