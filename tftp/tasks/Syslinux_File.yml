@@ -3,7 +3,7 @@
    - name: Extract syslinux archive
      ansible.builtin.unarchive:
 #       src: "{{ SYSLINUX_URL }}"
-       src: "./{{role_name}}/files/syslinux/syslinux-3.86.zip"
+       src: "./{{role_name}}/files/syslinux-3.86.zip"
        dest: "./{{role_name}}/files/syslinux"
        owner: "{{ USER }}"
        group: "{{ GROUP }}"
