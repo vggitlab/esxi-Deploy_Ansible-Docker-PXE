@@ -27,8 +27,8 @@
        - name: Modify host specific Template file
          ansible.builtin.lineinfile:
            path: "./{{role_name}}/templates/{{ item.MAC_ADDRESS }}.j2"
-           regexp: '^APPEND'
-           line: APPEND -c /{{ OSDIRNAME }}/boot.cfg ks=http://{{ WEBSERVER_IP }}/{{ item.MAC_ADDRESS }}.cfg
+           regexp: '^(.*)APPEND(.*)$'
+           line: '  APPEND -c /{{ OSDIRNAME }}/boot.cfg ks=http://{{ WEBSERVER_IP }}/{{ item.MAC_ADDRESS }}.cfg'
          with_items:
            "{{ ESXi_HOSTS }}"
 
