@@ -1,5 +1,13 @@
 ---
 
+   - name: Create "syslinux" directory
+     file:
+       path: "./{{role_name}}/files/syslinux"
+       owner: "{{ USER }}"
+       group: "{{ GROUP }}"
+       mode: 0775
+       state: directory
+
    - name: Extract syslinux archive
      ansible.builtin.unarchive:
 #       src: "{{ SYSLINUX_URL }}"
