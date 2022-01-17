@@ -1,4 +1,4 @@
 ---
-
+# vars file for Dockerdepend
 #NETWORK: "192.168.255.0/24"
 #GATEWAY: "192.168.255.2"
