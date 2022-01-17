@@ -11,7 +11,7 @@ Repository:
    * Ansible [core 2.12.1]
    * Docker version 20.10.12, build e91ed57
 
-# Prerequisite
+# Prerequisites
 
 PXE Deployment server must have access to the Internet.
 
