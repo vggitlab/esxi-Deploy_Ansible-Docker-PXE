@@ -61,7 +61,7 @@ https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.ht
 
 `sudo docker ps`
 
-11. Power On VMware ESXi host(s) to begin installation.
+11. Power On VMware ESXi host(s) to begin OS installation process.
 
 # Important to know
 
