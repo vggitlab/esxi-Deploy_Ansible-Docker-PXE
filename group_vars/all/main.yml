@@ -1,5 +1,7 @@
 ---
+# Global vars file
 
+# vars - custom kickstart file
 ESXi_HOSTS:
   - ESXi_HOST: "ESXi-01"
     NAME: "ESXi01"
@@ -10,25 +12,31 @@ ESXi_HOSTS:
     IP_ADDRESS: "192.168.255.222"
     MAC_ADDRESS: "00-0c-29-66-92-f3"
 
+# vars - local user and group of PXE Deployment server
 USER: "ansible"
 GROUP: "ansible"
 
+# vars - ESXi installation version
 OSDIRNAME: "ESXi-7.0"
 
 SYSLINUX_URL: "https://mirrors.edge.kernel.org/pub/linux/utils/boot/syslinux/3.xx/syslinux-3.86.zip"
 
+# vars - ISC DHCP docker container
 dhcp_docker_image_name: "dhcp-server"
 dhcp_docker_container_name: "dhcp-server"
 dhcp_docker_container_ip: "192.168.255.15"
 
+# vars - HTTP docker container
 http_docker_image_name: "web-server"
 http_docker_container_name: "web-server"
 http_docker_container_ip: "192.168.255.17"
 
+# vars - TFTP docker container
 tftp_docker_image_name: "tftp-server"
 tftp_docker_container_name: "tftp-server"
 tftp_docker_container_ip: "192.168.255.16"
 
+# vars for ISC DHCP server
 SUBNET: "192.168.255.0"
 NETMASK: "255.255.255.0"
 NETWORK: "192.168.255.0/24"
