@@ -1,5 +1,5 @@
 ---
-
+# vars file for ISC DHCP docker container
 #dhcp_docker_image_name: "dhcp-server"
 #dhcp_docker_container_name: "dhcp-server"
 #dhcp_docker_container_ip: "192.168.255.15"
