@@ -63,6 +63,6 @@ https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.ht
 
 # Important to know
 
-- Location of ISC DHCP server configuration template file: `esxi-Deploy_Ansible-Docker-PXE/dhcp/templates/dhcpd.j2`
+- Location of ISC DHCP server configuration file: `esxi-Deploy_Ansible-Docker-PXE/dhcp/templates/dhcpd.j2`
 - Location of custom Boot file: `esxi-Deploy_Ansible-Docker-PXE/tftp/templates/default.j2`
 - Location of Kickstart file: `esxi-Deploy_Ansible-Docker-PXE/http/templates/ks.j2`
