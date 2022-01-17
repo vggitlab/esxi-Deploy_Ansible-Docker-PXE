@@ -1,5 +1,5 @@
 ---
-
+# vars file for TFTP docker container
 #ESXi_HOSTS:
 #  - ESXi_HOST: "ESXi-01"
 #    NAME: "ESXi01"
