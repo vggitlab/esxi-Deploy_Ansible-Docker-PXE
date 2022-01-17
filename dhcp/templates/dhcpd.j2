@@ -24,7 +24,7 @@ class "pxeclients" {
 default-lease-time 86400;
 max-lease-time 86400;
 
-# This is my Lab-Network
+# This is Deployment Network
 subnet {{ SUBNET }} netmask {{ NETMASK }} {
   range {{ START_IP_RANGE }} {{ END_IP_RANGE }};
   option domain-name-servers {{ DNSSERVER_IP }};
