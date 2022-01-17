@@ -41,7 +41,7 @@ PXE Deployment server and ESXi host(s) must be placed on the same network.
 
 https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
 
-5. Enter your custom values in **group_vars/all/main.yml file** file.
+5. Enter custom values in **group_vars/all/main.yml file** file. Such as NAME; IP_ADDRESS; MAC_ADDRESS
 
 `nano group_vars/all/main.yml`
 
