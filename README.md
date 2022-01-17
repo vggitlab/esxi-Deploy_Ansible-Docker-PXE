@@ -20,8 +20,8 @@ PXE Deployment server and ESXi host(s) must be placed on the same network.
 # How to use
 
 1. Install Ubuntu on physical or virtual machine.
-  * install OpenSSH sever: sudo apt install openssh-server
-  * install Unzip package: sudo apt install unzip
+  * install OpenSSH sever: `sudo apt install openssh-server`
+  * install Unzip package: `sudo apt install unzip`
 
 2. Download repository to the server.
 
