@@ -53,4 +53,10 @@ https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.ht
 
 `sudo ansible-playbook deploy.yml -vvv`
 
-8. Power On VMware ESXi host(s) to begin installation.
+8. Wait for ansible palybook to be finished.
+
+9. Verify that 3 Docker container are up and running.
+
+`sudo docker ps`
+
+10. Power On VMware ESXi host(s) to begin installation.
