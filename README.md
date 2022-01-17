@@ -55,9 +55,9 @@ https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.ht
 
 `sudo ansible-playbook deploy.yml -vvv`
 
-9. Wait for ansible palybook to be finished.
+9. Wait for ansible playbook to finish execution.
 
-10. Verify that 3 Docker container are up and running.
+10. Verify, that three Docker containers are UP and running.
 
 `sudo docker ps`
 
