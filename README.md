@@ -1,9 +1,9 @@
 # Installation of VMware ESXi using Ansible, Docker and PXE
 
-Repository:
+This repository:
 - builds PXE deployment server with help of Ansible and Docker containers (ISC DHCP, TFTP and HTTP servers).
-- can be used for automated installation of VMware ESXi host(s) in Boot mode BIOS or UEFI.
-- can be used for automated custom installation of VMware ESXi host(s) using kickstart file.
+- is used for automated installation of VMware ESXi host boot mode - BIOS or UEFI.
+- is used for custom installation of VMware ESXi host using kickstart file.
 - has been tested on:
    * Ubuntu 20.04.3 LTS
    * Python 3.8.10
@@ -15,7 +15,7 @@ Repository:
 
 PXE Deployment server must have access to the Internet.
 
-PXE Deployment server and ESXi host(s) must be placed on the same network.
+PXE Deployment server and ESXi host should be placed on the same network.
 
 # How to use
 
@@ -23,7 +23,7 @@ PXE Deployment server and ESXi host(s) must be placed on the same network.
   * install OpenSSH sever: `sudo apt install openssh-server`
   * install Unzip package: `sudo apt install unzip`
 
-2. Download repository to the server.
+2. Download this repository to the server.
 
 `sudo wget https://github.com/vggitlab/esxi-Deploy_Ansible-Docker-PXE/archive/refs/heads/master.zip` 
 
@@ -61,7 +61,7 @@ https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.ht
 
 `sudo docker ps`
 
-11. Power On VMware ESXi host(s) to begin OS installation process.
+11. Power On VMware ESXi host to begin OS installation process.
 
 # Important to know
 
