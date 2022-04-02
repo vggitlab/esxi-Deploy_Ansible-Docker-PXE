@@ -1,7 +1,7 @@
 # Installation of VMware ESXi using Ansible, Docker and PXE
 
 This repository:
-- builds PXE deployment server with help of Ansible and Docker containers (ISC DHCP, TFTP and HTTP servers).
+- builds PXE server with help of Ansible and Docker containers (ISC DHCP, TFTP and HTTP servers).
 - is used for automated installation of VMware ESXi host boot mode - BIOS or UEFI.
 - is used for custom installation of VMware ESXi host using kickstart file.
 - has been tested on:
