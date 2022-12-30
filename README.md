@@ -53,6 +53,10 @@ https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.ht
 
 `cd esxi-Deploy_Ansible-Docker-PXE-master/`
 
+If you have installed ansible-core on the server, please install Docker community network module.
+
+`ansible-galaxy collection install community.docker`
+
 `sudo ansible-playbook deploy.yml -vvv`
 
 9. Wait for ansible playbook to finish execution.
