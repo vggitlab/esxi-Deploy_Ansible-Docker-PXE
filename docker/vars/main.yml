@@ -11,5 +11,5 @@ DOCKER_PACKAGES:
   - docker-ce
   - docker-ce-cli
   - containerd.io
-USER: "ansible"
+#USER: "ansible"
 CTOP_VERSION: "0.7.3"
