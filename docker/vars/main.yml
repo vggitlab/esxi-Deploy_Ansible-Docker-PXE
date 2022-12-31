@@ -5,6 +5,7 @@ DOCKER_REQ_PACKAGES:
   - apt-transport-https
   - ca-certificates
   - curl
+  - software-properties-common
   - gnupg
   - lsb-release
 DOCKER_PACKAGES:
