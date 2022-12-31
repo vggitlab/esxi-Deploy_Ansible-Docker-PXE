@@ -101,7 +101,7 @@ if [[ $(which ansible) && $(which python3) && ! $(which pip3) ]]; then
     # Install Ansible:
     echo ""
     echo "${yellow}Installing Ansible and it's components.${reset}"
-    sudo apt install -y ansible-core
+    sudo apt install -y ansible
     sleep 5
 
     echo ""
