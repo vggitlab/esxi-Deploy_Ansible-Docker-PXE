@@ -20,52 +20,52 @@ PXE Deployment server and ESXi host should be placed on the same network.
 # How to use
 
 1. Install Ubuntu on physical or virtual machine.
+
+2. Update Ubuntu and Install Packages
+  * update Ubuntu: `sudo apt update && sudo apt upgrade`
   * install OpenSSH sever: `sudo apt install openssh-server`
   * install Unzip package: `sudo apt install unzip`
+  * install Wget package: `sudo apt install wget`
 
-2. Download this repository to the server.
+3. Download this repository to the server.
 
 `sudo wget https://github.com/vggitlab/esxi-Deploy_Ansible-Docker-PXE/archive/refs/heads/master.zip` 
 
-3. Unzip repository.
+4. Unzip repository.
 
 `sudo unzip master.zip`
 
-4. Make executable **install-Ansible.sh** file.
+5. Make executable **install-Ansible.sh** file.
 
 `sudo chmod u+x esxi-Deploy_Ansible-Docker-PXE-master/install-Ansible.sh`
 
-5. Install Ansible using **install-Ansible.sh** bash script.
+6. Install Ansible using **install-Ansible.sh** bash script.
 
 `sudo ./esxi-Deploy_Ansible-Docker-PXE-master/install-Ansible.sh`
 
-5. Install Ansible following instructions from the link bellow:
+7. Install Ansible following instructions from the link bellow:
 
 https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
 
-6. Enter custom values in **group_vars/all/main.yml file** file. Such as NAME; IP_ADDRESS; MAC_ADDRESS
+8. Enter custom values in **group_vars/all/main.yml file** file. Such as NAME; IP_ADDRESS; MAC_ADDRESS
 
 `sudo nano esxi-Deploy_Ansible-Docker-PXE-master/group_vars/all/main.yml`
 
-7. Insert VMware ESXi installation ISO file into CD-ROM.
+9. Insert VMware ESXi installation ISO file into CD-ROM.
 
-8. Run ansible playbook to build PXE deployment infrastructure.
+10. Run ansible playbook to build PXE deployment infrastructure.
 
 `cd esxi-Deploy_Ansible-Docker-PXE-master/`
 
-If you have installed ansible-core on the server, please install Docker community network module.
-
-`ansible-galaxy collection install community.docker`
-
 `sudo ansible-playbook deploy.yml -vvv`
 
-9. Wait for ansible playbook to finish execution.
+11. Wait for ansible playbook to finish execution.
 
-10. Verify, that three Docker containers are UP and running.
+12. Verify, that three Docker containers are UP and running.
 
 `sudo docker ps`
 
-11. Power On VMware ESXi host to begin OS installation process.
+13. Power On VMware ESXi host to begin OS installation process.
 
 # Important to know
 
