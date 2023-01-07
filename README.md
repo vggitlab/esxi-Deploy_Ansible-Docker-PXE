@@ -43,29 +43,29 @@ PXE Deployment server and ESXi host should be placed on the same network.
 
 `sudo ./esxi-Deploy_Ansible-Docker-PXE-master/install-Ansible.sh`
 
-7. Install Ansible following instructions from the link bellow:
+or following instructions from the link bellow:
 
 https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
 
-8. Enter custom values in **group_vars/all/main.yml file** file. Such as NAME; IP_ADDRESS; MAC_ADDRESS
+7. Enter custom values in **group_vars/all/main.yml file** file. Such as NAME; IP_ADDRESS; MAC_ADDRESS
 
 `sudo nano esxi-Deploy_Ansible-Docker-PXE-master/group_vars/all/main.yml`
 
-9. Insert VMware ESXi installation ISO file into CD-ROM.
+8. Insert VMware ESXi installation ISO file into CD-ROM.
 
-10. Run ansible playbook to build PXE deployment infrastructure.
+9. Run ansible playbook to build PXE deployment infrastructure.
 
 `cd esxi-Deploy_Ansible-Docker-PXE-master/`
 
 `sudo ansible-playbook deploy.yml -vvv`
 
-11. Wait for ansible playbook to finish execution.
+10. Wait for ansible playbook to finish execution.
 
-12. Verify, that three Docker containers are UP and running.
+11. Verify, that three Docker containers are UP and running.
 
 `sudo docker ps`
 
-13. Power On VMware ESXi host to begin OS installation process.
+12. Power On VMware ESXi host to begin OS installation process.
 
 # Important to know
 
