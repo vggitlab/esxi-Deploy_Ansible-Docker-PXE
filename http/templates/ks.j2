@@ -8,7 +8,7 @@ install --firstdisk --overwritevmfs
 
 #Set password, either encrypted or unencrypted
 #rootpw --iscrypted <your encrypted password>
-rootpw Password123!
+rootpw {{ item.PASSWORD }}
 
 network --bootproto=static --device=vmnic0 --ip={{ item.IP_ADDRESS }} --netmask={{ NETMASK }} --gateway={{ GATEWAY }} --nameserver={{ DNSSERVER_IP }} --hostname={{ item.NAME }}.{{ DOMAIN_NAME }} --addvmportgroup=0
 #network --bootproto=dhcp
