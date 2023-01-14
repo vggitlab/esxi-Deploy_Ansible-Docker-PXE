@@ -7,10 +7,12 @@ ESXi_HOSTS:
     NAME: "ESXi01"
     IP_ADDRESS: "192.168.255.221"
     MAC_ADDRESS: "00-0c-29-64-e4-1e"
+    PASSWORD: "Password123!"
   - ESXi_HOST: "ESXi-02"
     NAME: "ESXi02"
     IP_ADDRESS: "192.168.255.222"
     MAC_ADDRESS: "00-0c-29-66-92-f3"
+    PASSWORD: "Password123!"
 
 # vars - local user and group of PXE Deployment server
 USER: "ansible"
