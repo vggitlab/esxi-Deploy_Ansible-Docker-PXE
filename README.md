@@ -27,11 +27,11 @@ PXE Deployment server and ESXi host should be placed on the same network.
   * install Unzip package: `sudo apt install unzip`
   * install Wget package: `sudo apt install wget`
 
-3. Download this repository to the server.
+3. Download the repository to the server.
 
 `sudo wget https://github.com/vggitlab/esxi-Deploy_Ansible-Docker-PXE/archive/refs/heads/master.zip` 
 
-4. Unzip repository.
+4. Unzip the repository.
 
 `sudo unzip master.zip`
 
@@ -47,7 +47,7 @@ or following instructions from the link bellow:
 
 https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
 
-7. Enter custom values in **group_vars/all/main.yml file** file. Such as NAME; IP_ADDRESS; MAC_ADDRESS
+7. Enter custom values in **group_vars/all/main.yml** file. Such as NAME; IP_ADDRESS; MAC_ADDRESS
 
 `sudo nano esxi-Deploy_Ansible-Docker-PXE-master/group_vars/all/main.yml`
 
