@@ -13,9 +13,9 @@ This repository:
 
 # Prerequisites
 
-PXE Deployment server must have access to the Internet.
+PXE server must have access to the Internet.
 
-PXE Deployment server and ESXi host should be placed on the same network.
+PXE server and ESXi host should be placed on the same network.
 
 # How to use
 
